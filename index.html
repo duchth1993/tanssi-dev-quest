@@ -51,6 +51,20 @@
       display: block;
       margin: 20px auto;
     }
+    .logo {
+      width: 120px;
+      height: auto;
+      margin: 10px;
+      transition: transform 0.3s, filter 0.3s;
+    }
+    .logo:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 15px #00eaff);
+    }
+    .logos-container {
+      text-align: center;
+      margin: 20px 0;
+    }
     pre {
       background: #0a0a2f;
       padding: 20px;
@@ -98,15 +112,27 @@
       background: rgba(10,0,74,0.9);
       margin-top: 60px;
     }
+    .project-logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+    }
     @media (max-width: 768px) {
       h1 { font-size: 2.2rem; }
       section { padding: 20px; margin: 20px; }
       iframe { height: 400px; }
+      .logo { width: 100px; }
     }
   </style>
 </head>
 <body>
   <header>
+    <div class="logos-container">
+      <!-- Logo Tanssi chính thức (từ tanssi.network hoặc Brandfetch) -->
+      <img class="logo" src="https://brandfetch.com/tanssi.network/logo" alt="Tanssi Network Logo">
+    </div>
     <h1>Tanssi Dev Quest Adventure</h1>
     <p>Deploy sovereign L1 appchain in minutes – like Wirex & Trexx!</p>
     <a href="https://apps.tanssi.network" target="_blank" class="cta-button">Start Building Now →</a>
@@ -150,6 +176,12 @@ fn main() {
 
   <section>
     <h2>Real-World Wins: Wirex & Trexx</h2>
+    <div class="project-logos">
+      <!-- Logo Wirex (từ Wikimedia/Seeklogo) -->
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Wirex_logo.png" alt="Wirex Logo">
+      <!-- Logo Trexx (từ trexx.com.br hoặc Tanssi post; dùng placeholder nếu chưa có, hoặc tìm PNG từ site) -->
+      <img class="logo" src="https://trexx.com.br/logo.png" alt="Trexx Logo"> <!-- Nếu chưa có, thay bằng ảnh từ https://trexx.com.br/ hoặc upload -->
+    </div>
     <ul>
       <li><strong>Wirex</strong>: Dedicated appchain → handle $20B+ tx/year, reduce third-party reliance, fast payments & compliance on-chain. Testnet live, mainnet incoming.</li>
       <li><strong>Trexx</strong>: First mainnet L1 on Tanssi → esports loyalty with AI-driven fan rewards, low-latency, predictable fees, ~98% finality for better retention.</li>
