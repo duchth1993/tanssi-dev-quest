@@ -1,43 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="description" content="Hands-on guide to deploy sovereign L1 on Tanssi in minutes - Wirex & Trexx examples">
-<meta property="og:title" content="Tanssi Dev Quest: Launch Appchain Fast">
-<meta property="og:image" content="https://tanssi-dev-quest.vercel.app/cyberpunk-timeline.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hands-on guide to deploy sovereign L1 appchain on Tanssi in minutes – Wirex & Trexx examples. #TanssiDevQuest">
+  <meta property="og:title" content="Tanssi Dev Quest: Launch Appchain Fast">
+  <meta property="og:description" content="Deploy sovereign L1 in minutes with Tanssi – Ethereum-secured, customizable infra.">
+  <meta property="og:image" content="https://tanssi-dev-quest.vercel.app/cyberpunk-timeline.png">
   <title>Tanssi Dev Quest: Launch in Minutes</title>
+  <link rel="icon" href="https://example.com/tanssi-favicon.ico" type="image/x-icon"> <!-- Thay bằng favicon thật nếu có -->
   <style>
-    body { font-family: 'Segoe UI', sans-serif; background: #0d001f; color: #d0e0ff; margin: 0; padding: 0; }
-    header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #0a004a, #1a006e); }
-    h1 { color: #00eaff; text-shadow: 0 0 15px #00eaff; }
-    section { max-width: 1100px; margin: 40px auto; padding: 20px; background: rgba(10, 0, 50, 0.6); border-radius: 15px; box-shadow: 0 0 30px rgba(0, 212, 255, 0.3); }
-    img { width: 100%; border-radius: 10px; box-shadow: 0 0 20px #00d4ff; }
-    a { color: #00eaff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    iframe { width: 100%; height: 500px; border: 2px solid #00d4ff; border-radius: 10px; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0d001f url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1600') no-repeat center/cover fixed;
+      color: #d0e0ff;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, rgba(10,0,74,0.85), rgba(26,0,110,0.85));
+      box-shadow: 0 10px 30px rgba(0,212,255,0.3);
+    }
+    h1 {
+      font-size: 3rem;
+      color: #00eaff;
+      text-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
+      margin: 0;
+    }
+    h2, h3 {
+      color: #00d4ff;
+      text-shadow: 0 0 10px #00d4ff;
+    }
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(10,0,50,0.75);
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0,212,255,0.4);
+      border: 1px solid rgba(0,212,255,0.3);
+    }
+    img.timeline {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #00d4ff;
+      display: block;
+      margin: 20px auto;
+    }
+    pre {
+      background: #0a0a2f;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      color: #00ffaa;
+      border: 1px solid #00d4ff;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 2px solid #00d4ff;
+      border-radius: 10px;
+      box-shadow: 0 0 25px #00d4ff;
+      margin: 20px 0;
+    }
+    a {
+      color: #00eaff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+      text-shadow: 0 0 10px #00eaff;
+    }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(45deg, #00d4ff, #00eaff);
+      color: #000;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      margin: 20px 0;
+      box-shadow: 0 0 20px #00d4ff;
+      transition: all 0.3s;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #00eaff;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(10,0,74,0.9);
+      margin-top: 60px;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      section { padding: 20px; margin: 20px; }
+      iframe { height: 400px; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Tanssi Dev Quest Adventure</h1>
     <p>Deploy sovereign L1 appchain in minutes – like Wirex & Trexx!</p>
+    <a href="https://apps.tanssi.network" target="_blank" class="cta-button">Start Building Now →</a>
   </header>
 
   <section>
-    <h2>Interactive Timeline: From Concept to Live</h2>
-    <!-- Upload ảnh cyberpunk timeline từ prompt trước, tên file: cyberpunk-timeline.png -->
-    <img src="cyberpunk-timeline.png" alt="Tanssi Quest Timeline Infographic">
+    <h2>Deployment Timeline (Interactive Infographic)</h2>
+    <!-- Thay bằng ảnh cyberpunk timeline của bạn -->
+    <img class="timeline" src="cyberpunk-timeline.png" alt="Tanssi Dev Quest Timeline - From Concept to Live in Minutes">
 
     <h3>Quick Start Steps</h3>
     <ol>
-      <li>Go to <a href="https://apps.tanssi.network" target="_blank">apps.tanssi.network</a> → Start Building.</li>
-      <li>Choose Quick Trial (~10 mins deploy) or Dedicated (~2h with team).</li>
-      <li>Config chain & deploy – RPC live instantly!</li>
+      <li>Visit <a href="https://apps.tanssi.network" target="_blank">apps.tanssi.network</a> → Click "Start Building".</li>
+      <li>Choose Quick Trial (~10 mins deploy, 48h test) or Dedicated (~2h, persistent chain).</li>
+      <li>Config chain name/ID/symbol + wallet → Deploy → RPC/WS endpoints live instantly!</li>
+      <li>Manage via Developer Portal: upgrade runtime, monitor, pay block production.</li>
     </ol>
+  </section>
 
-    <h3>Try a Demo (Replit Embed)</h3>
-   <pre style="background:#0a0a2f; padding:15px; border-radius:10px; overflow:auto; color:#00ffaa;">
+  <section>
+    <h2>Try a Demo (Replit Embedded)</h2>
+    <!-- Thay src bằng embed URL thật từ Replit của bạn -->
+    <iframe 
+      src="https://replit.com/@duchth1993/tanssi-demo?embed=true" 
+      allowfullscreen 
+      title="Tanssi Rust Demo">
+    </iframe>
+    <p><small>Interact with the code: Edit, click Run to see output. This is a simple Rust example inspired by Tanssi templates.</small></p>
+
+    <!-- Placeholder code nếu embed chưa sẵn -->
+    <pre>
 // Tanssi Simple Template Demo (main.rs)
 fn main() {
     println!("Deploying Tanssi Appchain...");
@@ -45,14 +145,20 @@ fn main() {
     println!("Chain ID: {}", chain_id);
     // Add pallet config here...
 }
-</pre>
-
-    <h3>Real Wins: Wirex & Trexx</h3>
-    <p>Wirex: $20B+ tx/year on dedicated appchain. Trexx: Gaming L1 with AI rewards, low-latency.</p>
+    </pre>
   </section>
 
-  <footer style="text-align:center; padding:30px; background:#0a004a;">
-    <p>Built for #TanssiDevQuest | @ducpickbigwin on X | Join Tanssi Discord</p>
+  <section>
+    <h2>Real-World Wins: Wirex & Trexx</h2>
+    <ul>
+      <li><strong>Wirex</strong>: Dedicated appchain → handle $20B+ tx/year, reduce third-party reliance, fast payments & compliance on-chain. Testnet live, mainnet incoming.</li>
+      <li><strong>Trexx</strong>: First mainnet L1 on Tanssi → esports loyalty with AI-driven fan rewards, low-latency, predictable fees, ~98% finality for better retention.</li>
+    </ul>
+    <p>Metrics highlight: 57M+ tx across Tanssi chains, 6-sec blocks, Ethereum-secured via Symbiotic.</p>
+  </section>
+
+  <footer>
+    <p>Built for #TanssiDevQuest | <a href="https://x.com/ducpickbigwin" target="_blank">@ducpickbigwin</a> | Join Tanssi Discord for support</p>
   </footer>
 </body>
 </html>
